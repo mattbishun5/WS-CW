@@ -1,0 +1,125 @@
+<!--/////UP812199 WEB SCRIPT APPLICATION-->
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Web Script Application</title>
+<!--
+
+These script tags link my code first of all to the jquery library, which is found in jquery.js. 
+The next row refers to the javascript file index.js. The last tag refers to my main.css, my external css file.
+-->
+
+<script src="jquery.js"></script>
+<script type="text/javascript" src="./index.js"></script>
+<link rel="stylesheet" href="main.css"> 
+
+
+<!--The code within body, makes up my tables, containing a draggable cell. Cells can be dragged to different columns, once some text has been added to the cells.
+-->
+
+<body>
+
+
+    <table id="Table1" border="1">
+
+        <!-- Table headings-->
+
+        <tr>
+
+            <th>Weeks </th>
+        </tr>
+        <!--Draggable cells-->
+
+        <td>
+            <div>
+                <span class ="event" id="item1" draggable="true" contenteditable = "true"> </span>
+            </div>
+        </td>
+
+
+    </table>
+
+
+    <table id="Table2" border="1">
+
+        <!--        Table headings-->
+        <tr>
+            <th>Lecture Topics</th>
+        </tr>
+
+        <!--Draggable cells-->
+        <td>
+            <div>
+                <span class ="event" id="item2" draggable="true" contenteditable = "true"> </span>
+            </div>
+        </td>
+
+
+    </table>
+
+
+    <table id="Table3" border="1">
+
+        <!--        Table headings-->
+        <tr>
+            <th>Practical Sessions</th>
+        </tr>
+
+        <!--Draggable cells-->
+        <td>
+            <div>
+                <span class ="event" id="item3" draggable="true" contenteditable = "true"> </span>
+            </div>
+
+        </td>   
+
+
+
+    </table>
+
+
+    <table id="Table4" border="1">
+
+        <!--        Table headings-->
+        <tr>
+            <th>Additional Notes</th>
+        </tr>
+        <!--Draggable cells-->
+        <td>
+
+            <div>
+                <span class ="event" id="item4" draggable="true" contenteditable = "true"> </span>
+            </div>
+
+        </td>   
+
+
+
+    </table>
+
+    <!--    This div tag hold the buttons classes, containing all my buttons for my application. Each button has a particular purpose and refers to a particular js function in index.js to perform a certain task.-->
+
+    <div class="buttons">   
+
+
+
+        <li><button onClick ="Insert_Week()" type="button">Insert a Week </button></li>
+        <li><button onClick ="Remove_Week()" type ="button">Remove a Week </button></li>
+        <li><button onClick ="Insert_Lecture()" type ="button">Insert a lecture topic </button></li> 
+        <li><button onClick ="Remove_Lecture()" type ="button">Remove a lecture topic </button> </li>
+        <li><button onClick ="Insert_Session()" type ="button">Insert a session </button> </li>
+        <li><button onClick ="Remove_Session()" type ="button">Remove a session </button> </li>
+        <li><button onClick ="Insert_Notes()" type ="button">Insert Notes </button> </li>
+        <li><button onClick ="Remove_Notes()" type ="button">Remove Notes </button> </li>
+
+
+    </div>
+</body>
+
+
+
+
+
+
+
+
