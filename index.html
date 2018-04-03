@@ -1,0 +1,314 @@
+<!--/////UP812199 WEB SCRIPT APPLICATION-->
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<title>Web Script Application</title>
+<!--
+
+These script tags link my code first of all to the jquery library, which is found in jquery.js. 
+The next row refers to the javascript file index.js. The last tag refers to my main.css, my external css file.
+-->
+
+<script src="jquery.js"></script>
+<script type="text/javascript" src="./index.js"></script>
+<link rel="stylesheet" href="main.css"> 
+<!--
+//This is my insert week function. Every time the insert week button is pressed a new week row is added.
+
+
+-->
+
+<script>
+    var n = 0;
+//    Variable n is set to 0.
+
+    function Insert_Week() {
+
+
+        //Table ID is found.
+        var x=document.getElementById("Table1");
+
+        //    A new row is added.
+        var row=x.insertRow(1);
+        var cell1=row.insertCell(0);
+
+        //    The draggable cells are set to true, and can be edited.
+        var newspan = document.createElement("span");
+        newspan.setAttribute("draggable",true);
+        newspan.setAttribute("contenteditable",true);
+
+        newspan.setAttribute("id", "cell"+n);
+        newspan.classList.add("event");
+        //the new span is added to the event class, which is set as the class of the span.
+
+        cell1.appendChild(newspan);
+
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "index.js"; 
+        document.getElementsByTagName("head")[0].appendChild(script);
+
+        //N is incremented each time.
+        n++;
+        return false;
+
+    }
+</script>
+
+<!--    //This is my remove week function. Every time the remove week button is pressed a week row is removed.-->
+<script>
+
+    function Remove_Week() {
+
+        document.getElementById("Table1").deleteRow(1);
+//Row is deleted
+    }
+
+</script>
+
+
+<!--    //This is my insert lecture function. Every time the insert lecture button is pressed a new lecture row is added.-->
+
+<script>
+//    Variable n is set to 0.
+    var n = 0;    
+
+    function Insert_Lecture() {
+
+//Table ID is found.
+        var x=document.getElementById("Table2");
+
+        var row=x.insertRow(1);
+        var cell1=row.insertCell(0);
+
+        var newspan = document.createElement("span");
+        newspan.setAttribute("draggable",true);
+        newspan.setAttribute("contenteditable",true);
+
+
+        newspan.setAttribute("id", "cell"+n);
+
+        newspan.classList.add("event");
+
+        cell1.appendChild(newspan);
+
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "index.js"; 
+        document.getElementsByTagName("head")[0].appendChild(script);
+
+        n++;
+        return false;
+
+    }
+</script>
+
+<!--    //This is my remove lecture function. Every time the remove lecture button is pressed a lecture row is removed.-->
+<script>
+
+    function Remove_Lecture() {
+
+        document.getElementById("Table2").deleteRow(1);
+
+    }
+
+</script>
+<!--    //This is my insert session function. Every time the insert session button is pressed a new week practical session is added.-->
+
+<script>
+    var n = 0;    
+
+    function Insert_Session() {
+
+        //Table 3 ID is found.
+        var x=document.getElementById("Table3");
+
+        var row=x.insertRow(1);
+        var cell1=row.insertCell(0);
+
+        var newspan = document.createElement("span");
+        newspan.setAttribute("draggable",true);
+        newspan.setAttribute("contenteditable",true);
+
+
+        newspan.setAttribute("id", "cell"+n);
+
+        newspan.classList.add("event");
+
+        cell1.appendChild(newspan);
+
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "index.js"; 
+        document.getElementsByTagName("head")[0].appendChild(script);
+
+        n++;
+        return false;
+
+    }
+</script>
+
+<!--    //This is my remove session function. Every time the remove session button is pressed a session is removed.-->
+
+<script>
+
+    function Remove_Session() {
+
+        document.getElementById("Table3").deleteRow(1);
+
+    }
+</script>
+
+<!--    //This is my insert notes function. Every time the insert notes button is pressed a new notes row is added.-->
+<script>
+    var n = 0;    
+
+    function Insert_Notes() {
+
+
+        var x=document.getElementById("Table4");
+
+        var row=x.insertRow(1);
+        var cell1=row.insertCell(0);
+
+        var newspan = document.createElement("span");
+        newspan.setAttribute("draggable",true);
+        newspan.setAttribute("contenteditable",true);
+
+
+        newspan.setAttribute("id", "cell"+n);
+
+        newspan.classList.add("event");
+
+        cell1.appendChild(newspan);
+
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "index.js"; 
+        document.getElementsByTagName("head")[0].appendChild(script);
+
+        n++;
+        return false;
+
+    }
+</script>
+
+<!--    //This is my remove notes function. Every time the remove notes button is pressed a notes row is removed.-->
+<script>
+    function Remove_Notes() {
+
+        document.getElementById("Table4").deleteRow(1);
+
+    }
+
+</script>
+
+
+
+
+<!--The code within body, makes up my tables, containing a draggable cell. Cells can be dragged to different columns, and more can be added to rows.
+-->
+
+<body>
+
+    <table id="Table1" border="1">
+
+        <!-- Table headings-->
+
+        <tr>
+
+            <th>Weeks </th>
+        </tr>
+        <!--Draggable cells-->
+
+        <td>
+            <div>
+                <span class ="event" id="item" draggable="true" contenteditable = "true"> </span>
+            </div>
+        </td>
+
+
+    </table>
+
+
+    <table id="Table2" border="1">
+
+        <!--        Table headings-->
+        <tr>
+            <th>Lecture Topics</th>
+        </tr>
+
+        <!--Draggable cells-->
+        <td>
+            <div>
+                <span class ="event" id="item" draggable="true" contenteditable = "true"> </span>
+            </div>
+        </td>
+
+
+    </table>
+
+
+    <table id="Table3" border="1">
+
+        <!--        Table headings-->
+        <tr>
+            <th>Practical Sessions</th>
+        </tr>
+
+        <!--Draggable cells-->
+        <td>
+            <div>
+                <span class ="event" id="item" draggable="true" contenteditable = "true"> </span>
+            </div>
+
+        </td>   
+
+    </table>
+
+
+    <table id="Table4" border="1">
+
+        <!-- Table headings-->
+        <tr>
+            <th>Additional Notes</th>
+        </tr>
+        <!--Draggable cells-->
+        <td>
+
+            <div>
+                <span class ="event" id="item" draggable="true" contenteditable = "true"> </span>
+            </div>
+
+        </td>   
+
+
+
+    </table>
+
+    <!-- This div tag hold the buttons classes, containing all my buttons for my application. Each button has a particular purpose and refers to a particular js function above, to perform a certain task.-->
+
+    <div class="buttons">   
+
+        <li><button onClick ="Insert_Week()" type="button">Insert a Week </button></li>
+        <li><button onClick ="Remove_Week()" type ="button">Remove a Week </button></li>
+        <li><button onClick ="Insert_Lecture()" type ="button">Insert a lecture topic </button></li> 
+        <li><button onClick ="Remove_Lecture()" type ="button">Remove a lecture topic </button> </li>
+        <li><button onClick ="Insert_Session()" type ="button">Insert a session </button> </li>
+        <li><button onClick ="Remove_Session()" type ="button">Remove a session </button> </li>
+        <li><button onClick ="Insert_Notes()" type ="button">Insert Notes </button> </li>
+        <li><button onClick ="Remove_Notes()" type ="button">Remove Notes </button> </li>
+
+
+    </div>
+
+</body>
+
+
+
+
+
+
+
+
